@@ -345,3 +345,36 @@ body{
     font-size:1.3em;
   }
 }
+.not-found{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.not-found h1{
+  font-size:6em;
+  font-family: myfont-bold;
+  letter-spacing: 3px;
+}
+.not-found h3{
+  font-size-adjust: 1.3em;
+  font-family: myfont-regular;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 1em 0;
+}
+.not-found a{
+  text-decoration: none;
+  color:white;
+  background: black;
+  padding:0.7em 1.4em;
+  font-family: myfont-regular;
+  transition: 0.3s ease-in;
+  border: 2px solid black;
+}
+.not-found a:hover{
+  background: white;
+  color:black;
+}

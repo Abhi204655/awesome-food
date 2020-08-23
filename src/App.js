@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Background from './components/Background';
 import Main from './components/pages/Main';
-import Detail from './components/pages/Detail';
+import NotFound from './components/pages/NotFound';
 import './App.css';
 
 class App extends React.Component {
@@ -15,8 +15,8 @@ class App extends React.Component {
             <Route exact path="/">
               <Main />
             </Route>
-            <Route exact path="/:id">
-              <Detail />
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>

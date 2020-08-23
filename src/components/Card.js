@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-
 import className from 'classnames';
 import Heart from '../Assets/Icons/Icon feather-heart.png';
 import Clock from '../Assets/Icons/Icon feather-clock.png';
@@ -13,7 +11,7 @@ export default function Card({ dish }) {
     return (
         <div className="card" onMouseEnter={() => setFull(true)} onMouseLeave={() => setFull(false)}>
             <div className="card-img">
-                <div className="tag">In {dish.category}</div>
+                <div className="tag">Calories: {dish.recipe.calories.toFixed(2)}</div>
                 <img src={dish.recipe.image} alt="food" className="food-image" />
             </div>
             <div className="card-data">
@@ -30,15 +28,13 @@ export default function Card({ dish }) {
                     </div>
                 </div>
                 <div className="card-desc">
-                    {dish.recipe.healthLabels.map(item => <p>{item}</p>)}
+                    {dish.recipe.healthLabels.map((item, index) => <p key={index}>{item}</p>)}
                 </div>
             </div>
             <div className={className("card-hover-container", {
                 "card-hover-container-show": full
             })}>
                 <div className={className("card-hover")}>
-                    {/* <Link to={`/${dish.id}`}>VIEW MORE</Link>
-                    <Link to={`/${dish.id}`}>QUICK VIEW</Link> */}
                     <a href={dish.recipe.url} target="_blank" rel="noopener noreferrer">VIEW MORE</a>
                 </div>
             </div>

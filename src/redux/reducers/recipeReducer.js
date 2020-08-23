@@ -14,7 +14,7 @@ export default function (state = initialState, action) {
                 ...state,
                 recipes: action.payload.recipes,
                 loading: false,
-                element:action.payload.element
+                element: action.payload.element
             }
         case LOADING_RECIPE:
             return {

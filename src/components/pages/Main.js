@@ -25,7 +25,7 @@ class Main extends React.Component {
             return {
                 ...prevState,
                 recipes: nextProps.recipe,
-                loading: false
+                loading: nextProps.loading
             }
         } else {
             return null;
