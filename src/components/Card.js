@@ -14,12 +14,12 @@ export default function Card({ dish }) {
         <div className="card" onMouseEnter={() => setFull(true)} onMouseLeave={() => setFull(false)}>
             <div className="card-img">
                 <div className="tag">In {dish.category}</div>
-                <img src={dish.image} alt="food" className="food-image" />
+                <img src={dish.recipe.image} alt="food" className="food-image" />
             </div>
             <div className="card-data">
                 <div className="card-data-top">
                     <div className="card-top-left">
-                        <h2 className="card-title">{dish.name}</h2>
+                        <h2 className="card-title">{dish.recipe.label}</h2>
                         <div className="card-timing">
                             <img src={Clock} alt="clock-icon" />
                             <p className="time">{parseInt(Math.random() * (40 - 15) + 15)} mins</p>
@@ -30,15 +30,16 @@ export default function Card({ dish }) {
                     </div>
                 </div>
                 <div className="card-desc">
-                    {dish.description}
+                    {dish.recipe.healthLabels.map(item => <p>{item}</p>)}
                 </div>
             </div>
             <div className={className("card-hover-container", {
                 "card-hover-container-show": full
             })}>
                 <div className={className("card-hover")}>
-                    <Link to={`/${dish.id}`}>VIEW MORE</Link>
-                    <Link to={`/${dish.id}`}>QUICK VIEW</Link>
+                    {/* <Link to={`/${dish.id}`}>VIEW MORE</Link>
+                    <Link to={`/${dish.id}`}>QUICK VIEW</Link> */}
+                    <a href={dish.recipe.url} target="_blank" rel="noopener noreferrer">VIEW MORE</a>
                 </div>
             </div>
         </div>

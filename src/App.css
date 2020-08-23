@@ -122,7 +122,7 @@ body{
   width: 23px;
   padding: 0.2em;
 }
-.search-bar .input-box{
+.search-bar .input-box form{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,12 +310,29 @@ body{
   filter: invert(100%);
 }
 .card-desc{
-  font-family: myfont-thin;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 1em 0.5em;
+  /* font-family: myfont-thin;
   font-size: 0.8em;
   margin: 1em 0;
   line-height: 1.4;
   padding-bottom: 1em;
-  color: #F0F0F0;
+  color: #F0F0F0; */
+}
+.card-desc p{
+  background: white;
+  color:black;
+  font-family:myfont-regular;
+  font-size: 0.7em;
+  margin: 0.2em 0.3em;
+  padding:0.2em 0.4em;
+  border-radius: 10px;
+
+
 }
 
 
